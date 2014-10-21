@@ -1,0 +1,19 @@
+# Eclipse project files
+.classpath
+.project
+.settings/
+.springBeans
+
+# Intellij project files
+*.iml
+.idea/
+
+# Others
+target/
+logs/
+*.log
+*.epoch
+*.db
+
+# OS X
+.DS_Store

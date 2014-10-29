@@ -11,7 +11,8 @@ public class CodeActionDto extends DtoBase {
 	private String b_orderId;
 	private String salessysid;
 	
-	public String getMD5() {
+	@Override
+	public String getDigestCode() {
 		return orderId + salessysid + b_orderId + Constants.KEY;
 	}
 	

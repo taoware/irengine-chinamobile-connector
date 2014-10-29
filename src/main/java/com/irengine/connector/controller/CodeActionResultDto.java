@@ -7,7 +7,7 @@ public class CodeActionResultDto extends ResultDtoBase {
 	private String itemId;
 	
 	public String getMD5() {
-		return code + itemId + Constants.KEY;
+		return getCode() + itemId + Constants.KEY;
 	}
 	
 }

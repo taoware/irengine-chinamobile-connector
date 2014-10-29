@@ -14,7 +14,8 @@ public class CodeCancelDto extends DtoBase {
 	private String backup;
 	private String salessysid;
 	
-	public String getMD5() {
+	@Override
+	public String getDigestCode() {
 		return orderId + salessysid + b_orderId + itemId + Constants.KEY;
 	}
 	

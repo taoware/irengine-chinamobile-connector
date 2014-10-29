@@ -12,7 +12,8 @@ public class CodeNoticeDto extends DtoBase {
 	private String itemId;
 	private String salessysid;
 	
-	public String getMD5() {
+	@Override
+	public String getDigestCode() {
 		return orderId + salessysid + b_orderId + itemId + Constants.KEY;
 	}
 	

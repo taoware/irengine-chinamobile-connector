@@ -21,8 +21,8 @@ public class OrderCreateDto extends DtoBase {
 	
 	@Override
 	public String getDigestCode() {
-		System.out.println(StringUtils.join(new Object[] {getOrderId(), getSalessysid(), getBusinessid(), getUserId(), getGoodid(), getNums(), getAmount(), Constants.KEY}));
-		return getOrderId() + getSalessysid() + getBusinessid() + getUserId() + getGoodid() + getNums() + getAmount() + Constants.KEY;
+		return StringUtils.join(new Object[] {getOrderId(), getSalessysid(), getBusinessid(), getUserId(), getGoodid(), getNums(), getAmount(), Constants.KEY});
+//		return getOrderId() + getSalessysid() + getBusinessid() + getUserId() + getGoodid() + getNums() + getAmount() + Constants.KEY;
 	}
 
 	@Mapping("vendorOrderId")

@@ -1,5 +1,7 @@
 package com.irengine.connector.controller;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.irengine.connector.Constants;
 
 public class OrderCreateResultDto extends ResultDtoBase {
@@ -9,7 +11,8 @@ public class OrderCreateResultDto extends ResultDtoBase {
 	
 	@Override
 	public String getDigestCode() {
-		return getCode() + getOrderId() + getB_orderId() + Constants.KEY;
+		return StringUtils.join(new Object[] {getCode(), getOrderId(), getB_orderId(), Constants.KEY});
+//		return getCode() + getOrderId() + getB_orderId() + Constants.KEY;
 	}
 
 	public String getOrderId() {

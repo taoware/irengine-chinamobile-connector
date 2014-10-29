@@ -11,7 +11,7 @@ public class DtoBase {
 	private String sign;
 	private String sign_type;
 	
-	public String getDigestCode() { return ""; };
+	public String getDigestCode() { return StringUtils.EMPTY; };
 
 	public String getDigest() {
 		try {
@@ -33,11 +33,6 @@ public class DtoBase {
 	}
 	
 	public boolean isValid() {
-		System.out.println("--------");
-		System.out.println(getDigestCode());
-		System.out.println(getDigest());
-		System.out.println(getSign());
-		System.out.println("--------");
 		return StringUtils.equals(getDigest(), getSign());
 	}
 

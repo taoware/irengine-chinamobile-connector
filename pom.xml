@@ -33,35 +33,10 @@
 			<scope>provided</scope>
 		</dependency>
 		
-				
 		<!-- h2 database -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-		</dependency>
-		
-		<!-- atomikos support hibernate/jta -->
-		<!--
-		<dependency>
-			<groupId>com.atomikos</groupId>
-			<artifactId>transactions</artifactId>
-			<version>3.9.3</version>
-		</dependency>
-		<dependency>
-			<groupId>com.atomikos</groupId>
-			<artifactId>transactions-jta</artifactId>
-			<version>3.9.3</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>hibernate</artifactId>
-					<groupId>org.hibernate</groupId>
-				</exclusion>
-			</exclusions>		</dependency>
-		-->
-		<dependency>
-			<groupId>com.atomikos</groupId>
-			<artifactId>transactions-hibernate3</artifactId>
-			<version>3.9.3</version>
 		</dependency>
 		
 		<!-- test -->
@@ -71,7 +46,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<start-class>com.irengine.connector.Application</start-class>

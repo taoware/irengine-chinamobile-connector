@@ -9,41 +9,41 @@ import com.irengine.connector.Constants;
  */
 public class CodeCancelDto extends DtoBase {
 
-	private String orderId;
-	private String b_orderId;
-	private String itemId;
+	private String orderid;
+	private String b_orderid;
+	private String itemid;
 	private String cancel_msg;
 	private String backup;
 	private String salessysid;
 	
 	@Override
 	public String getDigestCode() {
-		return StringUtils.join(new Object[] {getOrderId(), getSalessysid(), getB_orderId(), getItemId(), Constants.KEY});
-//		return getOrderId() + getSalessysid() + getB_orderId() + getItemId() + Constants.KEY;
+		return StringUtils.join(new Object[] {getOrderid(), getSalessysid(), getB_orderid(), getItemid(), Constants.KEY});
+//		return getOrderid() + getSalessysid() + getB_orderid() + getItemid() + Constants.KEY;
 	}
 
-	public String getOrderId() {
-		return orderId;
+	public String getOrderid() {
+		return orderid;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setOrderid(String orderid) {
+		this.orderid = orderid;
 	}
 
-	public String getB_orderId() {
-		return b_orderId;
+	public String getB_orderid() {
+		return b_orderid;
 	}
 
-	public void setB_orderId(String b_orderId) {
-		this.b_orderId = b_orderId;
+	public void setB_orderid(String b_orderid) {
+		this.b_orderid = b_orderid;
 	}
 
-	public String getItemId() {
-		return itemId;
+	public String getItemid() {
+		return itemid;
 	}
 
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
+	public void setItemid(String itemid) {
+		this.itemid = itemid;
 	}
 
 	public String getCancel_msg() {

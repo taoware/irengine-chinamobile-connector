@@ -105,7 +105,7 @@ public class ChinaMobileRestController {
 			CodeActionDto dto = jsonMapper.readValue(data, CodeActionDto.class);
 			
 			if (dto.isValid()) {
-				Order order = orderService.getOrder(dto.getOrderId());
+				Order order = orderService.getOrder(dto.getOrderid());
 				
 				if (null == order)
 					return new ResponseEntity<>(ResultDtoUtility.newNotFoundCodeActionResultDto(), HttpStatus.OK);
@@ -140,7 +140,7 @@ public class ChinaMobileRestController {
 			CodeActionDto dto = jsonMapper.readValue(data, CodeActionDto.class);
 			
 			if (dto.isValid()) {
-				Order order = orderService.getOrder(dto.getOrderId());
+				Order order = orderService.getOrder(dto.getOrderid());
 				
 				if (null == order)
 					return new ResponseEntity<>(ResultDtoUtility.newNotFoundCodeActionResultDto(), HttpStatus.OK);
@@ -174,7 +174,7 @@ public class ChinaMobileRestController {
 			CodeActionDto dto = jsonMapper.readValue(data, CodeActionDto.class);
 			
 			if (dto.isValid()) {
-				Order order = orderService.getOrder(dto.getOrderId());
+				Order order = orderService.getOrder(dto.getOrderid());
 				
 				if (null == order)
 					return new ResponseEntity<>(ResultDtoUtility.newNotFoundCodeActionResultDto(), HttpStatus.OK);
@@ -201,13 +201,13 @@ public class ChinaMobileRestController {
 			CodeCancelDto dto = jsonMapper.readValue(data, CodeCancelDto.class);
 			
 			if (dto.isValid()) {
-				Order order = orderService.getOrder(dto.getOrderId());
+				Order order = orderService.getOrder(dto.getOrderid());
 				
-				if (null == order || StringUtils.isEmpty(dto.getItemId()))
+				if (null == order || StringUtils.isEmpty(dto.getItemid()))
 					return new ResponseEntity<>(ResultDtoUtility.newNotFoundCodeActionResultDto(), HttpStatus.OK);
 				
 				try {
-					orderService.cancelCode(order, dto.getItemId());
+					orderService.cancelCode(order, dto.getItemid());
 				} catch (CodeUsedException cue) {
 					logger.warn("Code used");
 					return new ResponseEntity<>(ResultDtoUtility.newCodeUsedCodeActionResultDto(order), HttpStatus.BAD_REQUEST);

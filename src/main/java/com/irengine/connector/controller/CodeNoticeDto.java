@@ -7,14 +7,14 @@ import com.irengine.connector.Constants;
  */
 public class CodeNoticeDto extends DtoBase {
 
-	private String orderId;
-	private String b_orderId;
-	private String itemId;
+	private String orderid;
+	private String b_orderid;
+	private String itemid;
 	private String salessysid;
 	
 	@Override
 	public String getDigestCode() {
-		return orderId + salessysid + b_orderId + itemId + Constants.KEY;
+		return orderid + salessysid + b_orderid + itemid + Constants.KEY;
 	}
 	
 }

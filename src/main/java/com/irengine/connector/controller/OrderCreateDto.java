@@ -9,8 +9,8 @@ import com.irengine.connector.Constants;
 
 public class OrderCreateDto extends DtoBase {
 
-	private String orderId;
-	private String userId;
+	private String orderid;
+	private String userid;
 	private Long amount;
 	private Long nums;
 	private Date create_time;
@@ -21,26 +21,26 @@ public class OrderCreateDto extends DtoBase {
 	
 	@Override
 	public String getDigestCode() {
-		return StringUtils.join(new Object[] {getOrderId(), getSalessysid(), getBusinessid(), getUserId(), getGoodid(), getNums(), getAmount(), Constants.KEY});
+		return StringUtils.join(new Object[] {getOrderid(), getSalessysid(), getBusinessid(), getUserid(), getGoodid(), getNums(), getAmount(), Constants.KEY});
 //		return getOrderId() + getSalessysid() + getBusinessid() + getUserId() + getGoodid() + getNums() + getAmount() + Constants.KEY;
 	}
 
 	@Mapping("vendorOrderId")
-	public String getOrderId() {
-		return orderId;
+	public String getOrderid() {
+		return orderid;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setOrderid(String orderid) {
+		this.orderid = orderid;
 	}
 
 	@Mapping("userId")
-	public String getUserId() {
-		return userId;
+	public String getUserid() {
+		return userid;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 
 	@Mapping("totalPrice")

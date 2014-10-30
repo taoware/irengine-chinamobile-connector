@@ -6,20 +6,20 @@ import com.irengine.connector.Constants;
 
 public class CodeActionResultDto extends ResultDtoBase {
 
-	private String itemId;
+	private String itemid;
 	
 	@Override
 	public String getDigestCode() {
-		return StringUtils.join(new Object[] {getCode(), getItemId(), Constants.KEY});
-//		return getCode() + getItemId() + Constants.KEY;
+		return StringUtils.join(new Object[] {getCode(), getItemid(), Constants.KEY});
+//		return getCode() + getItemid() + Constants.KEY;
 	}
 
-	public String getItemId() {
-		return itemId;
+	public String getItemid() {
+		return itemid;
 	}
 
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
+	public void setItemid(String itemid) {
+		this.itemid = itemid;
 	}
 	
 }

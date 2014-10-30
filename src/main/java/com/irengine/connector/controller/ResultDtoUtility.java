@@ -22,8 +22,8 @@ public class ResultDtoUtility {
 		OrderCreateResultDto resultDto = new OrderCreateResultDto();
 		resultDto.setCode("1000");
 		resultDto.setMsg("Order created.");
-		resultDto.setOrderId(order.getVendorOrderId());
-		resultDto.setB_orderId(order.getOrderId());
+		resultDto.setOrderid(order.getVendorOrderId());
+		resultDto.setB_orderid(order.getOrderId());
 		resultDto.setSign(resultDto.getDigest());
 		return resultDto;
 	}
@@ -32,8 +32,8 @@ public class ResultDtoUtility {
 		OrderCreateResultDto resultDto = new OrderCreateResultDto();
 		resultDto.setCode("1001");
 		resultDto.setMsg("Data invalid.");
-		resultDto.setOrderId(order.getVendorOrderId());
-		resultDto.setB_orderId(order.getOrderId());
+		resultDto.setOrderid(order.getVendorOrderId());
+		resultDto.setB_orderid(order.getOrderId());
 		resultDto.setSign(resultDto.getDigest());
 		return resultDto;
 	}
@@ -42,7 +42,7 @@ public class ResultDtoUtility {
 		OrderCreateResultDto resultDto = new OrderCreateResultDto();
 		resultDto.setCode("1001");
 		resultDto.setMsg("MD5 invalid.");
-		resultDto.setOrderId(dto.getOrderId());
+		resultDto.setOrderid(dto.getOrderid());
 		resultDto.setSign(resultDto.getDigest());
 		return resultDto;
 	}
@@ -60,7 +60,7 @@ public class ResultDtoUtility {
 			resultDto.setCode("1001");
 			resultDto.setMsg("SMS failure.");
 		}
-		resultDto.setItemId(order.getItems());
+		resultDto.setItemid(order.getItems());
 		resultDto.setSign(resultDto.getDigest());
 		return resultDto;
 	}
@@ -69,7 +69,7 @@ public class ResultDtoUtility {
 		CodeActionResultDto resultDto = new CodeActionResultDto();
 		resultDto.setCode("1000");
 		resultDto.setMsg("Code query.");
-		resultDto.setItemId(order.getItemsStatus());
+		resultDto.setItemid(order.getItemsStatus());
 		resultDto.setSign(resultDto.getDigest());
 		return resultDto;
 	}
@@ -78,7 +78,7 @@ public class ResultDtoUtility {
 		CodeActionResultDto resultDto = new CodeActionResultDto();
 		resultDto.setCode("1001");
 		resultDto.setMsg("Data invalid.");
-		resultDto.setItemId(order.getItems());
+		resultDto.setItemid(order.getItems());
 		resultDto.setSign(resultDto.getDigest());
 		return resultDto;
 	}
@@ -106,7 +106,7 @@ public class ResultDtoUtility {
 		CodeActionResultDto resultDto = new CodeActionResultDto();
 		resultDto.setCode("1000");
 		resultDto.setMsg("Code canceled.");
-		resultDto.setItemId(dto.getItemId());
+		resultDto.setItemid(dto.getItemid());
 		resultDto.setSign(resultDto.getDigest());
 		return resultDto;
 	}
@@ -115,7 +115,7 @@ public class ResultDtoUtility {
 		CodeActionResultDto resultDto = new CodeActionResultDto();
 		resultDto.setCode("1001");
 		resultDto.setMsg("Code used.");
-		resultDto.setItemId(StringUtils.EMPTY);
+		resultDto.setItemid(StringUtils.EMPTY);
 		resultDto.setSign(resultDto.getDigest());
 		return resultDto;
 	}

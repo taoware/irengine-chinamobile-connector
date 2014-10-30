@@ -23,7 +23,7 @@ public class ResultDtoBase {
 		try {
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			
-			md.update(this.getCode().getBytes());
+			md.update(this.getDigestCode().getBytes());
 			
 			byte[] digest = md.digest();
 			StringBuffer sb = new StringBuffer();

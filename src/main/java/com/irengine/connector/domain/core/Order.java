@@ -32,7 +32,7 @@ public class Order extends EntityBase {
 	private String vendorId;
 	private String applicationId;
 	public enum STATUS {
-		Created(0), Not_Sent(1), Sent_Success(2), Sent_Failure(3), Cancel(9);
+		Created(0), Not_Sent(1), Sent_Success(2), Sent_Failure(3), Canceled(9);
 		
 	    private final int value;
 	    private STATUS(int value) {

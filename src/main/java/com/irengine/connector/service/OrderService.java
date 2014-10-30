@@ -78,6 +78,9 @@ public class OrderService {
 				throw new CodeUsedException("code used");
 			}
 		}
+		
+		order.setStatus(Order.STATUS.Canceled);
+		orderDao.save(order);
 	}
 	
 	public Order sendCode(Order order) {

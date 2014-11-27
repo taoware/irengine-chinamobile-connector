@@ -170,7 +170,20 @@ public class Order extends EntityBase {
 		List<String> itemsStatus = new ArrayList<String>();
 		for (OrderItemCode itemCode : itemCodes)
 		{
-			itemsStatus.add(itemCode.getItemCode() + "|" + status.getValue());
+			int itemStatus = 1;
+			if (OrderItemCode.STATUS.Unused.equals(itemCode.getStatus())) {
+				if (Order.STATUS.Sent_Success.equals(status))
+					itemStatus = 1;
+				else
+					itemStatus = 4;
+			}
+			else if (OrderItemCode.STATUS.Canceled.equals(itemCode.getStatus())) {
+				itemStatus = 2;
+			}
+			else if (OrderItemCode.STATUS.Canceled.equals(itemCode.getStatus())) {
+				itemStatus = 3;
+			}
+			itemsStatus.add(itemCode.getItemCode() + "|" + itemStatus);
 		}
 		return StringUtils.join(itemsStatus, ",");
 	}

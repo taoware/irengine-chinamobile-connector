@@ -56,6 +56,7 @@ public class OrderService {
 				OrderItemCode itemCode = new OrderItemCode();
 				itemCode.setOrder(order);
 				itemCode.setItemCode(getCoupon(size));
+				itemCode.setStatus(OrderItemCode.STATUS.Unused);
 				order.getItemCodes().add(itemCode);
 			}
 			

@@ -1,10 +1,10 @@
 package com.irengine.connector.service;
 
-public class CodeUsedException extends Exception {
+public class CodeException extends Exception {
 	
 	private static final long serialVersionUID = 1L;
 
-	public CodeUsedException(String message) {
+	public CodeException(String message) {
         super(message);
     }
     

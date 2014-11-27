@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.irengine.connector.domain.core.Order;
-import com.irengine.connector.service.CodeUsedException;
+import com.irengine.connector.service.CodeException;
 import com.irengine.connector.service.OrderService;
 
 @RestController
@@ -208,7 +208,7 @@ public class ChinaMobileRestController {
 				
 				try {
 					orderService.cancelCode(order, dto.getItemid());
-				} catch (CodeUsedException cue) {
+				} catch (CodeException cue) {
 					logger.warn("Code used");
 					return new ResponseEntity<>(ResultDtoUtility.newCodeUsedCodeActionResultDto(order), HttpStatus.BAD_REQUEST);
 				} catch (Exception e) {

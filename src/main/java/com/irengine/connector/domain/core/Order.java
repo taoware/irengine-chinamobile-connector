@@ -32,7 +32,7 @@ public class Order extends EntityBase {
 	private String vendorId;
 	private String applicationId;
 	public enum STATUS {
-		Created(0), Not_Sent(1), Sent_Success(2), Sent_Failure(3), Canceled(9);
+		Created(0), Not_Sent(1), Sent_Success(2), Sent_Failure(3), Canceled(9), Completed(100);
 		
 	    private final int value;
 	    private STATUS(int value) {
@@ -144,7 +144,7 @@ public class Order extends EntityBase {
 		this.status = status;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "order", cascade=CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "order", cascade=CascadeType.ALL)
 	public Set<OrderItemCode> getItemCodes() {
 		return itemCodes;
 	}

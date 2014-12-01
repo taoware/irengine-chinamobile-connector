@@ -1,13 +1,14 @@
 package com.irengine.connector.service;
 
+import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
 
 import com.irengine.connector.Constants;
 import com.irengine.connector.controller.ChinaMobileRestController;
@@ -38,7 +39,7 @@ public class OrderService {
 	 */
 	public Order createOrder(Order order) {
 		
-		order.setOrderId(StringUtils.arrayToDelimitedString(new String[] {"CM", order.getVendorOrderId()}, "-"));
+		order.setOrderId(StringUtils.join(new String[] {"CM", order.getVendorOrderId()}, "-"));
 		order.setStatus(Order.STATUS.Created);
 		
 		return orderDao.save(order);
@@ -51,6 +52,15 @@ public class OrderService {
 	public Order getOrder(String vendorOrderId) {
 		
 		return orderDao.findOneByVendorOrderId(vendorOrderId);
+		
+	}
+	
+	/*
+	 * get coupon by code
+	 */
+	public Coupon getCoupon(String code) {
+		
+		return couponDao.findOneByCode(code);
 		
 	}
 	
@@ -68,8 +78,9 @@ public class OrderService {
 			Long count = order.getItemCount();
 			Long size = order.getTotalPrice()/(order.getItemCount() * 100);
 			for(int i = 0; i < count; i++) {
-				Coupon coupon = couponDao.findOneBySizeAndStatus(size, Coupon.STATUS.Unused);
-				if (null == coupon) throw new CodeException("code unavailable");
+				List<Coupon> coupons = couponDao.findBySizeAndStatus(size, Coupon.STATUS.Unused); 
+				if (0 == coupons.size()) throw new CodeException("code unavailable");
+				Coupon coupon = coupons.get(0);
 				
 				coupon.setStatus(Coupon.STATUS.Used);
 				couponDao.save(coupon);

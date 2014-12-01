@@ -107,7 +107,7 @@ public class ChinaMobileRestController {
 			if (dto.isValid()) {
 				Order order = orderService.getOrder(dto.getOrderid());
 				
-				if (null == order)
+				if (null == order || order.getStatus().equals(Order.STATUS.Canceled) || order.getStatus().equals(Order.STATUS.Completed))
 					return new ResponseEntity<>(ResultDtoUtility.newNotFoundCodeActionResultDto(), HttpStatus.OK);
 				
 				try {
@@ -142,7 +142,7 @@ public class ChinaMobileRestController {
 			if (dto.isValid()) {
 				Order order = orderService.getOrder(dto.getOrderid());
 				
-				if (null == order)
+				if (null == order || order.getStatus().equals(Order.STATUS.Canceled) || order.getStatus().equals(Order.STATUS.Completed))
 					return new ResponseEntity<>(ResultDtoUtility.newNotFoundCodeActionResultDto(), HttpStatus.OK);
 				
 				try {

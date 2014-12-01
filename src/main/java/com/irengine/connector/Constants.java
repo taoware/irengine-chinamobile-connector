@@ -11,7 +11,11 @@ import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 public class Constants {
 
-	public static String KEY = "12345678";
+	/*
+	 * salessysid 329  
+	 * 代理商key I480PWVT
+	 */
+	public static String KEY = "I480PWVT";
 	private static Properties props;
 	private static final Logger logger = LoggerFactory.getLogger(Constants.class);
 

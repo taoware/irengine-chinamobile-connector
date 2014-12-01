@@ -5,7 +5,7 @@
 
 	<groupId>com.irengine</groupId>
 	<artifactId>connector</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 
 	<name>irengine-connector</name>
@@ -34,9 +34,16 @@
 		</dependency>
 		
 		<!-- h2 database -->
+		<!-- 
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+		</dependency>
+		-->
+		<!-- mysql database -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<!-- object mapping -->
 		<dependency>

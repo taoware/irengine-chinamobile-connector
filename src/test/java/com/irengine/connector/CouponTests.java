@@ -2,6 +2,8 @@ package com.irengine.connector;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,10 +51,10 @@ public class CouponTests {
 		
 		assertEquals(1, couponDao.count());
 		
-		Coupon unused = couponDao.findOneBySizeAndStatus(50, Coupon.STATUS.Unused);
+		List<Coupon> unused = couponDao.findBySizeAndStatus(50, Coupon.STATUS.Unused);
 		assertNotNull(unused);
 		
-		Coupon used = couponDao.findOneBySizeAndStatus(300, Coupon.STATUS.Unused);
+		List<Coupon> used = couponDao.findBySizeAndStatus(300, Coupon.STATUS.Unused);
 		assertNull(used);
 	}
 

@@ -64,7 +64,7 @@ public class SmsHelper {
 				msgContent.setMessage(content.getBytes("GBK"));
 				msg.setShortMessage(msgContent);
 				msg.assignSequenceNumber();
-				emppApi.submitMsgAsync(msg);
+				emppApi.submitMsg(msg);
 				
 				flag = true;
 
@@ -72,6 +72,13 @@ public class SmsHelper {
 				e.printStackTrace();
 			}
 		}
+		
+		try {
+		    Thread.sleep(1000);                 //1000 milliseconds is one second.
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}
+
 		
 		return flag;
 	}

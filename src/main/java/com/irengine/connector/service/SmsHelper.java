@@ -64,7 +64,7 @@ public class SmsHelper {
 				msgContent.setMessage(content.getBytes("GBK"));
 				msg.setShortMessage(msgContent);
 				msg.assignSequenceNumber();
-				emppApi.submitMsg(msg);
+				emppApi.submitMsgAsync(msg);
 				
 				flag = true;
 

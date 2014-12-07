@@ -65,6 +65,13 @@ public class OrderService {
 	}
 	
 	/*
+	 * get order by code or mobile
+	 */
+	public List<Order> getOrderByCodeOrMobile(String code) {
+		return orderDao.findByCodeOrMobile(code);
+	}
+	
+	/*
 	 * generate order items from coupon
 	 */
 	public Order generateCode(Order order) throws CodeException {
